@@ -19,7 +19,6 @@ fun Application.configureSockets() {
     routing {
         val connections = Collections.synchronizedSet<Connection?>(LinkedHashSet())
         webSocket("/chat") { // websocketSession
-            println("Adding user!")
             val thisConnection = Connection(this)
             connections += thisConnection
             try {
